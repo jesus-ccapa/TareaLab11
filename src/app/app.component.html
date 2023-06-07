@@ -1,0 +1,23 @@
+<h1>Tarea Lab 11</h1>
+
+<div class="container">
+  <header class="row">
+    <div class="col-6">
+      <app-form (tareaEnviada)="onTareaGuardar($event)"></app-form>
+    </div>
+    <div class="col-6">
+      <app-filtros
+        (prioridadEnviada)="onFiltrarPrioridad($event)"
+        (busquedaEnviada)="onBusqueda($event)"
+      ></app-filtros>
+    </div>
+  </header>
+  <main>
+    <app-lista-tareas
+      [tareas]="arrTareas"
+      [prioridad]="prioridad"
+      [busqueda]="busqueda"
+      (tareaBorrar)="onDeleteTarea($event)"
+    ></app-lista-tareas>
+  </main>
+</div>
